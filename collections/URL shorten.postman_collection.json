@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "2bc6f5ba-c51e-4cb0-af0c-826a70a3903a",
+		"name": "URL shorten",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12635879"
+	},
+	"item": [
+		{
+			"name": "encode",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"www.amazon.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/urls/encode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"urls",
+						"encode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decode",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"ahmmmmm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/persons/e6a3603a-4e9b-4a42-ab78-df1788134135",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"persons",
+						"e6a3603a-4e9b-4a42-ab78-df1788134135"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
